@@ -26,9 +26,9 @@ The system aims to search scientific abstracts from EU Research Projects, utiliz
 ---
 ## Prerequisites & Installation
 To run the notebooks, you need the following:
-**Python 3.8+**
-**Elasticsearch** (Local installation): Must be running on port `9200`.
-**trec_eval**: The executable file for evaluation (usually placed in a `../../trec_eval/` folder).
+* **Python 3.8+**
+* **Elasticsearch** (Local installation): Must be running on port `9200`.
+* **trec_eval**: The executable file for evaluation (usually placed in a `../../trec_eval/` folder).
 
 ### Python Libraries Installation
 Run the following command to install the necessary packages:
