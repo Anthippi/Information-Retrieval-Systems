@@ -51,18 +51,18 @@ graph TD
     Queries["Queries"]
 
     %% Step 1: Preprocessing
-    subgraph Prep ["1. Data Preparation"]
+    subgraph Prep ["Data Preparation"]
         Clean["Text Cleaning (Python)"]
     end
 
     %% Step 2: Vectorization
-    subgraph Model ["2. AI Vectorization (BERT)"]
+    subgraph Model ["AI Vectorization (BERT)"]
         Encoder["Transformer Model (MiniLM)"]
         Vectors["Dense Vectors (Embeddings)"]
     end
 
     %% Step 3: Search
-    subgraph Search ["3. Similarity Search (FAISS)"]
+    subgraph Search ["Similarity Search (FAISS)"]
         Index["FAISS Index"]
         Sim["Cosine Similarity Calculation"]
     end
@@ -100,7 +100,7 @@ graph TD
     RawQueries[("Raw Queries")]
 
     %% --- STEP 0: SHARED CLEANING ---
-    subgraph Preprocessing ["0. Data Cleaning (Python)"]
+    subgraph Preprocessing ["Data Cleaning (Python)"]
         CleanFunc[("clean_text Function")]
         CleanDocs["Cleaned Documents"]
         CleanQueries["Cleaned Queries"]
@@ -110,20 +110,20 @@ graph TD
     end
 
     %% --- STEP 1: ELASTICSEARCH ---
-    subgraph Stage1 ["1. Retrieval (Elasticsearch)"]
+    subgraph Stage1 ["Retrieval (Elasticsearch)"]
         Elastic["Elasticsearch Index (BM25)"]
         Candidates["Top-200 Candidate IDs"]
     end
 
     %% --- STEP 2: BERT RE-RANKING ---
-    subgraph Stage2 ["2. Re-ranking (BERT Model)"]
+    subgraph Stage2 ["Re-ranking (BERT Model)"]
         Filter["Filter: Keep only Top-200 Texts"]
         BERT["BERT Model (MiniLM)"]
         SemScores["Semantic Similarity Scores"]
     end
 
     %% --- STEP 3: FUSION ---
-    subgraph Stage3 ["3. Fusion (RRF)"]
+    subgraph Stage3 ["Fusion (RRF)"]
         RRF["Reciprocal Rank Fusion Algorithm"]
     end
 
